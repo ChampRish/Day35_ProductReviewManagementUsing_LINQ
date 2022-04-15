@@ -55,6 +55,21 @@ namespace Day35_ProductReviewManagement
                 Console.WriteLine(" Product Id : {0} \t ReviewCount : {1}", p.ProductId, p.count);
             }
         }
+        public void ShowProductIDAndReview(List<ProductReview> ProductList)
+        {
+            List<ProductReview> result;
+            result = (from prod in ProductList
+                      orderby (prod.ProductId)
+                      select prod).ToList();
+
+            Console.WriteLine("\n - - -  Display productID , Reviews from all records  - - -");
+            Console.WriteLine(" Product Id \t Review");
+
+            foreach (ProductReview p in result)
+            {
+                Console.WriteLine(" {0}\t\t{1}", p.ProductId, p.Review);
+            }
+        }
 
 
     }
