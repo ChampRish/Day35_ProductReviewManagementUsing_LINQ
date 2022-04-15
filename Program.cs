@@ -11,9 +11,8 @@ namespace Day35_ProductReviewManagement
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Product Review managament program ");
-
-            List<ProductReview> Product;
-            Product = new List<ProductReview>
+            List<ProductReview> ProductList;
+            ProductList = new List<ProductReview>
             {
                 new ProductReview() { ProductId = 10, UserId = 13, Rating = 4, Review = "Average", isLike = true },
                 new ProductReview() { ProductId = 70, UserId = 16, Rating = 2, Review = "bad", isLike = false },
@@ -42,6 +41,11 @@ namespace Day35_ProductReviewManagement
                 new ProductReview() { ProductId = 90, UserId = 19, Rating = 1, Review = "bad", isLike = false }
             };
 
+            ProductManagement pm = new ProductManagement();
+            pm.Top3Products(ProductList);
+            Console.ReadLine();
         }
+
+        
     }
 }
