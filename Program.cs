@@ -43,9 +43,11 @@ namespace Day35_ProductReviewManagement
 
             ProductManagement pm = new ProductManagement();
             pm.Top3Products(ProductList);
+            pm.RetriveRecords(ProductList);
             Console.ReadLine();
+
         }
 
-        
+
     }
 }
