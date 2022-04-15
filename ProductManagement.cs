@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Day35_ProductReviewManagement
 {
@@ -55,6 +53,21 @@ namespace Day35_ProductReviewManagement
                 Console.WriteLine(" Product Id : {0} \t ReviewCount : {1}", p.ProductId, p.count);
             }
         }
+        
+        public void SkipTop5Records(List<ProductReview> ProductList)
+        {
+            var result = (from pr
+                          in ProductList
+                          select pr).Skip(5);
+
+            Console.WriteLine("\n - - -  Displaying top 5 skipped records - - - ");
+            Console.WriteLine(" ProductId\tUserId Rating\tReview \t IsLike ");
+
+            foreach (ProductReview p in result)
+            {
+                Console.WriteLine(" {0}\t\t{1}\t{2}\t{3}\t  {4}", p.ProductId, p.UserId, p.Rating, p.Review, p.isLike);
+            }
+        }
         public void ShowProductIDAndReview(List<ProductReview> ProductList)
         {
             List<ProductReview> result;
@@ -70,20 +83,7 @@ namespace Day35_ProductReviewManagement
                 Console.WriteLine(" {0}\t\t{1}", p.ProductId, p.Review);
             }
         }
-        public void SkipTop5Records(List<ProductReview> ProductList)
-        {
-            var result = (from pr
-                          in ProductList
-                          select pr).Skip(5);
 
-            Console.WriteLine("\n - - -  Displaying top 5 skipped records - - - ");
-            Console.WriteLine(" ProductId\tUserId Rating\tReview \t IsLike ");
-
-            foreach (ProductReview p in result)
-            {
-                Console.WriteLine(" {0}\t\t{1}\t{2}\t{3}\t  {4}", p.ProductId, p.UserId, p.Rating, p.Review, p.isLike);
-            }
-        }
 
 
     }
