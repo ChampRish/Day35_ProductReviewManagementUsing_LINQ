@@ -47,6 +47,7 @@ namespace Day35_ProductReviewManagement
             pm.RetriveRecords(ProductList);
             pm.CountOfUser(ProductList);
             pm.ShowProductIDAndReview(ProductList);
+            pm.SkipTop5Records(ProductList);
             Console.ReadLine();
 
         }
